@@ -1,0 +1,9 @@
+Add library to gradle file
+
+StartApp
+   compile 'com.startapp:inapp-sdk:3.6.5'
+   
+Admob
+  
+    compile 'com.google.android.gms:play-services-gcm:9.8.0'
+    compile 'com.google.android.gms:play-services-ads:9.8.0'
