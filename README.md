@@ -7,11 +7,14 @@ StartApp
 Admob
   
     compile 'com.google.android.gms:play-services-gcm:9.8.0'
+    
     compile 'com.google.android.gms:play-services-ads:9.8.0'
     
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     private AdView adView;
+    
     private InterstitialAd mInterstitialAd;
+    
     private StartAppAd startApp    
     
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,12 +23,19 @@ Admob
     private void showStartApp()
     {
         startApp = new StartAppAd(this);
+        
         String str = SharedPrefUtil.loadString(getBaseContext(), KeyUtils.KEY_STARTAPP_ID,"");
+        
         //////////////////add startapp APP ID//////////////////////////
+        
         StartAppSDK.init(this, SharedPrefUtil.loadString(getBaseContext(), KeyUtils.KEY_STARTAPP_ID,""), true);
+        
         startApp.enableAutoInterstitial();
+        
 //        startApp.showAd(this);
+
 //        startApp.setAutoInterstitialPreferences(new AutoInterstitialPreferences().setSecondsBetweenAds(2 * 60));
+
 
         startApp.loadAd(new AdEventListener() {
             @Override
@@ -57,6 +67,7 @@ Admob
                 .build();
       // Load ads into Interstitial Ads
         mInterstitialAd.loadAd(adRequest);
+        
         mInterstitialAd.setAdListener(new AdListener() {
             public void onAdLoaded() {
 //                showInterstitial();
